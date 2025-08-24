@@ -1,0 +1,202 @@
+2025-08-21 15:33:49.203 | ERROR    | api.extentions:handle_error:34 - An error occurred: 'RAR_UPLOAD_FOLDER'
+Traceback (most recent call last):
+
+  File "/opt/anaconda3/lib/python3.12/threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x10344fba0>
+    └ <Thread(Thread-1 (process_request_thread), started daemon 6171013120)>
+  File "/opt/anaconda3/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x10344f880>
+    └ <Thread(Thread-1 (process_request_thread), started daemon 6171013120)>
+  File "/opt/anaconda3/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (process_request_thread), started daemon 6171013120)>
+    │    │        │    └ (<socket.socket fd=18, family=2, type=1, proto=0, laddr=('192.168.50.174', 8000), raddr=('192.168.50.174', 52782)>, ('192.168...
+    │    │        └ <Thread(Thread-1 (process_request_thread), started daemon 6171013120)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x1053de360>>
+    └ <Thread(Thread-1 (process_request_thread), started daemon 6171013120)>
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('192.168.50.174', 52782)
+    │    │              └ <socket.socket fd=18, family=2, type=1, proto=0, laddr=('192.168.50.174', 8000), raddr=('192.168.50.174', 52782)>
+    │    └ <function BaseServer.finish_request at 0x10347d8a0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x1053de360>
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x1053de360>
+    │    │                   │        └ ('192.168.50.174', 52782)
+    │    │                   └ <socket.socket fd=18, family=2, type=1, proto=0, laddr=('192.168.50.174', 8000), raddr=('192.168.50.174', 52782)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x1053de360>
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x103660d60>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x1053dfec0>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/opt/anaconda3/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x1034954e0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x1053dfec0>
+  File "/opt/anaconda3/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x1053dfec0>>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'api.extentions'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x1053de360>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x1053dfec0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x1053f72e0>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x1053f7240>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=18>, 'wsgi.errors': <_io.TextIOWra...
+                       └ <Flask 'api.extentions'>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x1053f7240>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=18>, 'wsgi.errors': <_io.TextIOWra...
+           │    └ <function Flask.wsgi_app at 0x103d12d40>
+           └ <Flask 'api.extentions'>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x103d12480>
+               └ <Flask 'api.extentions'>
+> File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x103d123e0>
+         └ <Flask 'api.extentions'>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'analysis.uploadrarview'
+           │    │           │    │              └ <Rule '/api/v2/analysis/upload_rar' (GET, POST, OPTIONS, HEAD) -> analysis.uploadrarview>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x105310cc0>, 'analysis.uploadrarview': <function View.as_view.<loca...
+           │    │           └ <Flask 'api.extentions'>
+           │    └ <function Flask.ensure_sync at 0x103d12660>
+           └ <Flask 'api.extentions'>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function View.as_view.<locals>.view at 0x1053f4400>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           │                       │    │                   └ {}
+           │                       │    └ <function Resource.dispatch_request at 0x10517a200>
+           │                       └ <api.analysis.upload_rar.UploadRarView object at 0x1050605f0>
+           └ <Flask 'api.extentions'>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+           │     │       └ {}
+           │     └ ()
+           └ <bound method UploadRarView.post of <api.analysis.upload_rar.UploadRarView object at 0x1050605f0>>
+
+  File "/Users/louzeyu/PycharmProjects/CreateReport/api/analysis/upload_rar.py", line 34, in post
+    pdf_upload_folder = current_app.config['RAR_UPLOAD_FOLDER']
+                        └ <Flask 'api.extentions'>
+
+KeyError: 'RAR_UPLOAD_FOLDER'
+2025-08-21 15:34:03.517 | ERROR    | api.extentions:handle_error:34 - An error occurred: 'RAR_UPLOAD_FOLDER'
+Traceback (most recent call last):
+
+  File "/opt/anaconda3/lib/python3.12/threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x10344fba0>
+    └ <Thread(Thread-2 (process_request_thread), started daemon 6171013120)>
+  File "/opt/anaconda3/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x10344f880>
+    └ <Thread(Thread-2 (process_request_thread), started daemon 6171013120)>
+  File "/opt/anaconda3/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-2 (process_request_thread), started daemon 6171013120)>
+    │    │        │    └ (<socket.socket fd=18, family=2, type=1, proto=0, laddr=('192.168.50.174', 8000), raddr=('192.168.50.174', 52786)>, ('192.168...
+    │    │        └ <Thread(Thread-2 (process_request_thread), started daemon 6171013120)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x1053de360>>
+    └ <Thread(Thread-2 (process_request_thread), started daemon 6171013120)>
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('192.168.50.174', 52786)
+    │    │              └ <socket.socket fd=18, family=2, type=1, proto=0, laddr=('192.168.50.174', 8000), raddr=('192.168.50.174', 52786)>
+    │    └ <function BaseServer.finish_request at 0x10347d8a0>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x1053de360>
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x1053de360>
+    │    │                   │        └ ('192.168.50.174', 52786)
+    │    │                   └ <socket.socket fd=18, family=2, type=1, proto=0, laddr=('192.168.50.174', 8000), raddr=('192.168.50.174', 52786)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x1053de360>
+  File "/opt/anaconda3/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x103660d60>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x104c30f20>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/opt/anaconda3/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x1034954e0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x104c30f20>
+  File "/opt/anaconda3/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x104c30f20>>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'api.extentions'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x1053de360>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x104c30f20>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x1053f72e0>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/werkzeug/serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x1053f7740>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=18>, 'wsgi.errors': <_io.TextIOWra...
+                       └ <Flask 'api.extentions'>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x1053f7740>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=18>, 'wsgi.errors': <_io.TextIOWra...
+           │    └ <function Flask.wsgi_app at 0x103d12d40>
+           └ <Flask 'api.extentions'>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x103d12480>
+               └ <Flask 'api.extentions'>
+> File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x103d123e0>
+         └ <Flask 'api.extentions'>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'analysis.uploadrarview'
+           │    │           │    │              └ <Rule '/api/v2/analysis/upload_rar' (GET, POST, OPTIONS, HEAD) -> analysis.uploadrarview>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x105310cc0>, 'analysis.uploadrarview': <function View.as_view.<loca...
+           │    │           └ <Flask 'api.extentions'>
+           │    └ <function Flask.ensure_sync at 0x103d12660>
+           └ <Flask 'api.extentions'>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function View.as_view.<locals>.view at 0x1053f4400>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           │                       │    │                   └ {}
+           │                       │    └ <function Resource.dispatch_request at 0x10517a200>
+           │                       └ <api.analysis.upload_rar.UploadRarView object at 0x10404ecf0>
+           └ <Flask 'api.extentions'>
+  File "/Users/louzeyu/Library/Caches/pypoetry/virtualenvs/createreport-gEtUjNlQ-py3.12/lib/python3.12/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+           │     │       └ {}
+           │     └ ()
+           └ <bound method UploadRarView.post of <api.analysis.upload_rar.UploadRarView object at 0x10404ecf0>>
+
+  File "/Users/louzeyu/PycharmProjects/CreateReport/api/analysis/upload_rar.py", line 34, in post
+    pdf_upload_folder = current_app.config['RAR_UPLOAD_FOLDER']
+                        └ <Flask 'api.extentions'>
+
+KeyError: 'RAR_UPLOAD_FOLDER'
